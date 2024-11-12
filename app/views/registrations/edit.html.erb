@@ -1,0 +1,36 @@
+<% provide(:title, "Edit Account") %>
+
+<section class="is-fullscreen mb-6">
+  <div class="container is-vcentered">
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <%= form_with(model: @user, url: edit_registration_path) do |form| %>
+          <div class="box m-3 p-5">
+            <p class="is-size-2 has-text-weight-medium block">Edit Account</p>
+            
+            <div class="field">
+              <%= form.label :email_address, class: "label" %>
+              <div class="control">
+                <%= form.email_field :email_address, autofocus: true, autocomplete: "email", class: "input" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :password, class: "label" %>
+              <div class="control">
+                <%= form.password_field :password, autocomplete: "new-password", class: "input" %>
+              </div>
+              <p class="help">Leave blank if you don't want to change your password.
+              </p>
+            </div>
+
+            <br>
+            <div class="actions">
+              <%= form.submit "Update", class: "button is-black has-text-white" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

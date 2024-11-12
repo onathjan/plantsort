@@ -14,6 +14,9 @@
     <div class="navbar-end">
       <% if authenticated? %>
         <div class="navbar-item has-text-centered">
+          <%= link_to "Edit Account", edit_registration_path(Current.user), class: "button is-black has-text-white" %>
+        </div>
+        <div class="navbar-item has-text-centered">
           <%= link_to "Log Out", session_path, data: { "turbo-method": :delete }, class: "button is-black has-text-white" %>
       <% else %>
         <div class="navbar-item has-text-centered">
