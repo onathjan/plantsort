@@ -1,0 +1,20 @@
+<nav class="navbar p-5" role="navigation" aria-label="main navigation" data-controller="mobile-menu">
+  <div class="navbar-brand">
+    <%= link_to "PlantSort", root_path, class: "has-text-primary has-text-weight-medium is-size-3" %>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-action="click->mobile-menu#toggleMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" data-mobile-menu-target="menu">
+    <div class="navbar-end">
+      <div class="navbar-item has-text-centered">
+        <%= link_to "Sign Up", signup_path, class: "button is-black has-text-white" %>
+      </div>
+    </div>
+  </div>
+</nav>
