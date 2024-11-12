@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
    root "static_pages#home"
 
-   get "signup", to: "registrations#new"
+  get "signup",  to: "registrations#new"
   post "signup", to: "registrations#create"
+  get "login",   to: "sessions#new"
 end
