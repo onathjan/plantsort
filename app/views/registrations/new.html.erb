@@ -1,0 +1,17 @@
+<%= form_with(model: @user, url: signup_path) do |form| %>
+  <div>
+    <%= form.label :email_address %>
+    <%= form.email_field :email_address, value: @user.email_address,
+        required: true, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password,
+        required: true, autocomplete: "new-password" %>
+  </div>
+
+  <div>
+    <%= form.submit "Sign up" %>
+  </div>
+<% end %>
