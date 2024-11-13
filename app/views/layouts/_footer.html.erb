@@ -1,0 +1,10 @@
+<footer class="footer is-vcentered mt-6">
+  <div class="content has-text-centered">
+    <div class="mb-3">
+      <%= mail_to "support@plantsort.com", "Contact Support", class: "has-text-link"%> |
+      <%= link_to "Terms of Use", root_path, class: "has-text-link"%> |
+      <%= link_to "Privacy Policy", root_path, class: "has-text-link"%>
+    </div>
+    <p>&copy; 2024 PlantSort. All Rights Reserved. Enjoy the rest of your <%= Date.today.strftime("%A") %>!</p>
+  </div>
+</footer>
