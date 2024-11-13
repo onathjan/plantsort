@@ -14,11 +14,19 @@
   background-color: #51A400;
 }
 
+.notice-message {
+  background-color: #3E7E00;
+}
+
 .button.is-red {
   background-color: #E60023;
 }
 
 .button.is-red:hover {
+  background-color: #FF1F41;
+}
+
+.alert-message {
   background-color: #FF1F41;
 }
 
