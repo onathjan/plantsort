@@ -2,7 +2,7 @@ require "test_helper"
 
 class PlantTest < ActiveSupport::TestCase
   def setup
-    @plant = Plant.new(common_name: "Dandelion", taxonomic_name: "Taraxacum officinale")
+    @plant = Plant.new(common_name: "Dandelion", taxonomic_name: "Taraxacum officinale", user_id: 1)
     assert @plant.valid?
   end
 
