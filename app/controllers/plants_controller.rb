@@ -1,10 +1,10 @@
 class PlantsController < ApplicationController
   def index
-    @plants = Plant.all
+    @plants = Current.user.plants
   end
 
   def show
-    @plant = Plant.find(params[:id])
+    @plant = Current.user.plants.find(params[:id])
   end
 
   def new
@@ -12,7 +12,7 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Plant.new(plant_params)
+    @plant = Current.user.plants.build(plant_params)
     if @plant.save
       redirect_to root_path, notice: "Plant successfully created!"
     else
@@ -21,11 +21,11 @@ class PlantsController < ApplicationController
   end
 
   def edit
-    @plant = Plant.find(params[:id])
+    @plant = Current.user.plants.find(params[:id])
   end
 
   def update
-    @plant = Plant.find(params[:id])
+    @plant = Current.user.plants.find(params[:id])
 
     if @plant.update(plant_params)
       redirect_to root_path, notice: "Plant successfully updated."
@@ -35,7 +35,7 @@ class PlantsController < ApplicationController
   end
 
   def destroy
-    Plant.find(params[:id]).destroy
+    Current.user.plants.find(params[:id]).destroy
     redirect_to root_path, notice: "Plant successfully deleted."
   end
 
