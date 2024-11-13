@@ -15,7 +15,7 @@
       <% if authenticated? %>
         <p>Hello! <%= Current.user.email_address %></p>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Edit Account", edit_registrations_path, class: "button is-black has-text-white" %>
+          <%= link_to "Edit Account", settings_path, class: "button is-black has-text-white" %>
         </div>
         <div class="navbar-item has-text-centered">
           <%= link_to "Log Out", session_path, data: { "turbo-method": :delete }, class: "button is-black has-text-white" %>
