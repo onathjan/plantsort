@@ -9,7 +9,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save!
+    if @user.save
       start_new_session_for(@user)
       redirect_to root_path, notice: "Account created successfully."
     else
@@ -27,7 +27,6 @@ class RegistrationsController < ApplicationController
     if @user.update(user_params)
       redirect_to root_path, notice: "Settings updated successfully."
     else
-      flash.now[:alert] = "Not enough information given to update."
       render :edit, status: :unprocessable_entity
     end
   end

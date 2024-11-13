@@ -7,6 +7,8 @@
         <%= form_with(model: @user, url: registrations_path) do |form| %>
           <div class="box m-3 p-5">
             <p class="is-size-2 has-text-weight-medium block">Edit Account</p>
+
+            <%= render 'shared/error_messages', object: form.object %>
             
             <div class="field">
               <%= form.label :email_address, class: "label" %>
