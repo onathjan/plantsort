@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
 
     if @user.save!
       start_new_session_for(@user)
-      redirect_to root_path, notice: "Signed up successfully"
+      redirect_to root_path, notice: "Account created successfully."
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class RegistrationsController < ApplicationController
     @user = Current.user
 
     if @user.update(user_params)
-      redirect_to root_path, notice: "Account updated successfully"
+      redirect_to root_path, notice: "Settings updated successfully."
     else
       render :edit, status: :unprocessable_entity
     end
