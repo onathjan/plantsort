@@ -13,6 +13,9 @@
   <div class="navbar-menu" data-mobile-menu-target="menu">
     <div class="navbar-end">
       <% if authenticated? %>
+          <div class="navbar-item has-text-centered">
+          <%= link_to "New Plant", new_plant_path, class: "button is-white has-text-green has-text-weight-semibold" %>
+        </div>
         <div class="navbar-item has-text-centered">
           <%= link_to "Settings", settings_path, class: "button is-white has-text-green has-text-weight-semibold" %>
         </div>
