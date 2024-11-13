@@ -1,0 +1,36 @@
+<% provide(:title, "Edit Plant") %>
+
+<section class="is-fullscreen mb-6">
+  <div class="container is-vcentered">
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <%= form_with(model: @plant, url: plant_path) do |form| %>
+          <div class="box m-3 p-5">
+            <p class="is-size-2 has-text-weight-medium block">Edit Plant</p>
+
+            <%= render 'shared/error_messages', object: form.object %>
+
+            <div class="field">
+              <%= form.label :common_name, class: "label" %>
+              <div class="control">
+                <%= form.text_field :common_name, autofocus: true, autocomplete: "common-name", class: "input" %>
+              </div>
+            </div>
+
+            <div class="field">
+              <%= form.label :taxonomic_name, class: "label" %>
+              <div class="control">
+                <%= form.text_field :taxonomic_name, autocomplete: "taxonomic-name", class: "input" %>
+              </div>
+            </div>
+
+            <br>
+            <div class="actions">
+              <%= form.submit "Create", class: "button is-green has-text-white has-text-weight-semibold" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
