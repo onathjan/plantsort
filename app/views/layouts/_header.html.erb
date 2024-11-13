@@ -13,7 +13,6 @@
   <div class="navbar-menu" data-mobile-menu-target="menu">
     <div class="navbar-end">
       <% if authenticated? %>
-        <p>Hello! <%= Current.user.email_address %></p>
         <div class="navbar-item has-text-centered">
           <%= link_to "Edit Account", settings_path, class: "button is-black has-text-white" %>
         </div>
