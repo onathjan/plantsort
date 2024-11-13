@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get "static_pages/home"
   resource :session
-  resources :passwords, param: :token
+
+  # keep commented out unless password mailers are needed
+  # resources :passwords, param: :token
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -17,6 +21,7 @@ Rails.application.routes.draw do
 
   get "terms-of-use",   to: "static_pages#terms"
   get "privacy-policy", to: "static_pages#privacy"
+  get "password-reset", to: "static_pages#password_reset"
 
   get "signup",   to: "registrations#new"
   post "signup",  to: "registrations#create"
