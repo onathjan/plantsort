@@ -14,7 +14,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Current.user.plants.build(plant_params)
     if @plant.save
-      redirect_to root_path, notice: "Plant successfully created!"
+      redirect_to plants_path, notice: "Plant successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
