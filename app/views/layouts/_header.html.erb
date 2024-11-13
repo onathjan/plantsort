@@ -1,6 +1,6 @@
 <nav class="navbar p-5" role="navigation" aria-label="main navigation" data-controller="mobile-menu">
   <div class="navbar-brand">
-    <%= link_to "PlantSort", root_path, class: "has-text-primary has-text-weight-medium is-size-3" %>
+    <%= link_to "PlantSort", root_path, class: "has-text-green has-text-weight-semibold is-size-2" %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-action="click->mobile-menu#toggleMenu">
       <span aria-hidden="true"></span>
@@ -14,17 +14,17 @@
     <div class="navbar-end">
       <% if authenticated? %>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Edit Account", settings_path, class: "button is-black has-text-white" %>
+          <%= link_to "Settings", settings_path, class: "button is-white has-text-green has-text-weight-semibold" %>
         </div>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Log Out", session_path, data: { "turbo-method": :delete }, class: "button is-black has-text-white" %>
+          <%= link_to "Log Out", session_path, data: { "turbo-method": :delete }, class: "button is-green has-text-white has-text-weight-semibold" %>
       <% else %>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Log In", login_path, class: "button is-black has-text-white" %>
+          <%= link_to "Log In", login_path, class: "button is-white has-text-green has-text-weight-semibold" %>
         </div>
 
         <div class="navbar-item has-text-centered">
-          <%= link_to "Sign Up", signup_path, class: "button is-black has-text-white" %>
+          <%= link_to "Sign Up", signup_path, class: "button is-green has-text-white has-text-weight-semibold" %>
         </div>
       <% end %>
     </div>
