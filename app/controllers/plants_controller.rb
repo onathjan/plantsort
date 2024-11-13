@@ -41,6 +41,6 @@ class PlantsController < ApplicationController
 
   private
     def plant_params
-      params.expect(user: [ :common_name, :taxonomic_name ])
+      params.expect(plant: [ :common_name, :taxonomic_name ])
     end
 end
