@@ -25,7 +25,7 @@ class RegistrationsController < ApplicationController
     @user = Current.user
 
     if @user.update(user_params)
-      redirect_to root_path, notice: "Settings updated successfully."
+      redirect_to root_path, notice: "Account settings updated successfully."
     else
       render :edit, status: :unprocessable_entity
     end
