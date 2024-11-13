@@ -1,0 +1,11 @@
+<% if alert %>
+  <div class="notification is-danger m-4 p-4" data-controller="flash-message">
+    <button class="delete" data-action="click->flash-message#close"></button>
+    <p class="is-size-6 has-text-black has-text-weight-semibold"><%= alert %></p>
+  </div>
+<% elsif notice %>
+  <div class="notification is-primary m-4 p-4" data-controller="flash-message">
+    <button class="delete" data-action="click->flash-message#close"></button>
+    <p class="is-size-6 has-text-black has-text-weight-semibold"><%= notice %></p>
+  </div>
+<% end %>

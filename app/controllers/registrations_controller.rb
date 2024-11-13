@@ -27,6 +27,7 @@ class RegistrationsController < ApplicationController
     if @user.update(user_params)
       redirect_to root_path, notice: "Settings updated successfully."
     else
+      flash.now[:alert] = "Not enough information given to update."
       render :edit, status: :unprocessable_entity
     end
   end

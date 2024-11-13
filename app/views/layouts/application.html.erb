@@ -24,6 +24,7 @@
 
   <body>
     <%= render "layouts/header" %>
+    <%= render "layouts/notices" %>
     <%= yield %>
     <br><br>
     <%= debug(params) if Rails.env.development? %>
