@@ -1,6 +1,6 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access(only: [ :new, :create ])
-  before_action :resume_session, only: [ :edit, :update ]
+  before_action :resume_session, only: [ :edit, :update, :destroy ]
 
   def new
     @user = User.new
@@ -29,6 +29,11 @@ class RegistrationsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    Current.user.destroy
+    redirect_to root_path, notice: "Account deleted successfully."
   end
 
   private

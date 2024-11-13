@@ -15,7 +15,7 @@
               </div>
             </div>
 
-            <div class="field">
+            <div class="field mb-4">
               <%= form.label :password, class: "label" %>
               <div class="control">
                 <%= form.password_field :password, autocomplete: "new-password", class: "input" %>
@@ -24,9 +24,11 @@
               </p>
             </div>
 
-            <br>
             <div class="actions">
               <%= form.submit "Update", class: "button is-green has-text-white has-text-weight-semibold" %>
+              <%= link_to "Delete your account", registrations_path, data: { "turbo-method": :delete,
+                  turbo_confirm: "Are you sure you want to delete your account? This action is irreversible and all of your data will be lost." }, 
+                  class: "button is-red has-text-white has-text-weight-semibold" %>
             </div>
           </div>
         <% end %>

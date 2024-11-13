@@ -20,5 +20,13 @@
 }
 
 .button.is-green:hover {
-  background-color: #51a400;
+  background-color: #51A400;
+}
+
+.button.is-red {
+  background-color: #E60023;
+}
+
+.button.is-red:hover {
+  background-color: #FF2D4D;
 }
