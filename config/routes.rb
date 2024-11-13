@@ -28,5 +28,5 @@ Rails.application.routes.draw do
   get "login",    to: "sessions#new"
   get "settings", to: "registrations#edit"
   resource :registrations
-  resources :plants
+  resources :plants, except: [ :index ]
 end
