@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
-  allow_unauthenticated_access
+  allow_unauthenticated_access(only: [ :new, :create ])
+  before_action :resume_session, only: [ :edit, :update ]
 
   def new
     @user = User.new
@@ -17,16 +18,16 @@ class RegistrationsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = Current.user
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = Current.user
 
     if @user.update(user_params)
       redirect_to root_path, notice: "Account updated successfully"
     else
-      render :new, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
