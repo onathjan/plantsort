@@ -1,12 +1,4 @@
 class PlantsController < ApplicationController
-  def index
-    @plants = Current.user.plants
-  end
-
-  def show
-    @plant = Current.user.plants.find(params[:id])
-  end
-
   def new
     @plant = Plant.new
   end
