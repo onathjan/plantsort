@@ -49,6 +49,12 @@ class EmailTests < UserTest
     @user.save
     assert_not duplicate_user.valid?
   end
+
+  test "email should be saved as lowercase" do
+    @user.email_address = "UsEr@ExAmPlE.cOm"
+    @user.save
+    assert_equal @user.email_address, "user@example.com"
+  end
 end
 
 class PasswordTests < UserTest
