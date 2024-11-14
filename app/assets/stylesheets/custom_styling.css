@@ -32,6 +32,7 @@
 
 #plant-card {
   height: 175px;
+  max-width: 300px;
 }
 
 @media (max-width: 1024px) {
