@@ -39,7 +39,7 @@ To run PlantSort locally:
 
 ## Future Improvements
 
-No future improvements are planned at the moment, but if you have an idea for a feature that would benefit the app don't hesitate to reach out at plantsort@gmail.com
+No future improvements are planned at the moment, but if you have an idea for a feature that would benefit the app don't hesitate to reach out at plantsortapp@gmail.com
 
 ## Contributing
 
