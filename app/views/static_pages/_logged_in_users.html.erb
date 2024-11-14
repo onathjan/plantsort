@@ -1,36 +1,12 @@
 <section class="section">
   <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-2">
+    <% @categories.each do |category| %>
       <div class="card p-3 m-2 is-green has-text-white has-text-centered">
         <p class="is-size-6 has-text-weight-bold">
-          Annual
+          <%= category.name.capitalize %>
         </p>
       </div>
-      <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
-          Biennial
-        </p>
-      </div>
-      <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
-          Perennial
-        </p>
-      </div>
-      <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
-          Fruit
-        </p>
-      </div>
-      <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
-         Vegetable
-        </p>
-      </div>
-      <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
-         Herb
-        </p>
-      </div>
-    </div>
+    <% end %>
   </div>
   <div class="container mb-6">
     <p class="is-size-2 block">All Plants (<%= @plants.count %>)</p>
@@ -47,8 +23,8 @@
               <p class= "is-size-4"><%= plant.taxonomic_name %></p>
             </div>
             <div class="actions">
-              <%= link_to "Edit Plant", edit_plant_path(plant), class: "button is-green has-text-white has-text-weight-semibold", data: { turbo: "false" } %>
-              <%= link_to "Delete Plant", plant_path(plant), data: { "turbo-method": :delete,
+              <%= link_to "Edit", edit_plant_path(plant), class: "button is-green has-text-white has-text-weight-semibold", data: { turbo: "false" } %>
+              <%= link_to "Delete", plant_path(plant), data: { "turbo-method": :delete,
                   turbo_confirm: "Are you sure you want to delete this plant?" }, 
                   class: "button is-red has-text-white has-text-weight-semibold" %>
             </div>

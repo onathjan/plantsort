@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
   allow_unauthenticated_access
   def home
-    @plants = Current.user.plants if authenticated?
+    if authenticated?
+      @plants = Current.user.plants.order(created_at: :desc)
+      @categories = Category.all
+    end
   end
 
   def terms
