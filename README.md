@@ -51,11 +51,11 @@ No future improvements are planned at the moment, but if you have an idea for a 
 
 ## Contributing
 
-- Fork the repository.
-- Create a new branch (git checkout -b feature/YourFeature).
-- Commit your changes (git commit -m 'Add YourFeature').
-- Push to the branch (git push origin feature/YourFeature).
-- Open a Pull Request.
+1. Fork the repository.
+2. Create your feature branch: ```git checkout -b my-new-feature```
+3. Commit your changes: ```git commit -am "Add some feature"```
+4. Push to the branch: ```git push origin my-new-feature```
+5. Submit a Pull Request.
 
 ## License
 
