@@ -30,6 +30,10 @@
   background-color: #FF1F41;
 }
 
+#plant-card {
+  height: 175px;
+}
+
 @media (max-width: 1024px) {
   div.navbar-menu.is-active {
     border-radius: 15px !important;

@@ -13,7 +13,7 @@
     <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
       <div class="grid">
         <% @plants.each do |plant| %>
-          <div class="card p-4 is-flex is-flex-direction-column is-justify-content-space-between" style="height: 175px;">
+          <div class="card p-4 is-flex is-flex-direction-column is-justify-content-space-between" id="plant-card">
             <p class="has-text-weight-semibold is-size-4"><%= "#{plant.name}" %></p>
             <div class="is-flex is-flex-wrap-wrap is-2">
               <% plant.categories.each do |category| %>
