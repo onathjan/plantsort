@@ -24,9 +24,22 @@
               </div>
             </div>
 
+           <div class="field">
+              <%= form.label :categories, class: "label" %>
+              <div class="checkboxes">
+                <% Category.all.each do |category| %>
+                  <div class="checkbox">
+                    <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
+                    <label for="category_ids_<%= category.id %>" class="checkbox">
+                      <%= category.name.capitalize %>
+                    </label>
+                  </div>
+                <% end %>
+              </div>
+            </div>
             <br>
             <div class="actions">
-              <%= form.submit "Create", class: "button is-green has-text-white has-text-weight-semibold" %>
+              <%= form.submit "Update", class: "button is-green has-text-white has-text-weight-semibold" %>
             </div>
           </div>
         <% end %>

@@ -12,9 +12,11 @@ class PlantsController < ApplicationController
   end
 
   def create
-    @plant = Current.user.plants.build(plant_params)
+    @plant = Current.user.plants.new(plant_params)
+    @plant.categories = Category.find(params[:plant][:category_ids])
+
     if @plant.save
-      redirect_to plants_path, notice: "Plant successfully created!"
+      redirect_to root_path, notice: "Plant successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,6 +28,7 @@ class PlantsController < ApplicationController
 
   def update
     @plant = Current.user.plants.find(params[:id])
+    @plant.categories = Category.find(params[:plant][:category_ids])
 
     if @plant.update(plant_params)
       redirect_to root_path, notice: "Plant successfully updated."
