@@ -18,13 +18,6 @@
             </div>
 
             <div class="field">
-              <%= form.label :taxonomic_name, class: "label" %>
-              <div class="control">
-                <%= form.text_field :taxonomic_name, autocomplete: "taxonomic-name", class: "input" %>
-              </div>
-            </div>
-
-            <div class="field">
               <%= form.label :categories, class: "label" %>
               <div class="checkboxes">
                 <% Category.all.each do |category| %>
