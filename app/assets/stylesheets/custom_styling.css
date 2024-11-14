@@ -14,7 +14,7 @@
   background-color: #51A400;
 }
 
-.notice-message {
+.notice-message, .is-green {
   background-color: #3E7E00;
 }
 
