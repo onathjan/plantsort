@@ -43,7 +43,7 @@ To run PlantSort locally:
 - Ruby on Rails 8: For the application backend.
 - Bulma: CSS framework for styling.
 - Turbo: To handle filtering plants without page reloads.
-- Stimulus: For enhancing JavaScript functionality (if used).
+- Stimulus: For enhancing JavaScript functionality.
 
 ## Future Improvements
 
