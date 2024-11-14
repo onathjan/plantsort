@@ -21,7 +21,7 @@ class PlantTest < ActiveSupport::TestCase
   end
 
   test "common name can't be too long" do
-    @plant.common_name = "a" * 51
+    @plant.common_name = "a" * 26
     assert_not @plant.valid?
   end
 end
