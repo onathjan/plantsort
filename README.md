@@ -13,21 +13,13 @@ PlantSort is a Rails 8 application designed to help gardeners organize and manag
 
 To run PlantSort locally:
 
-1. Clone the repository:
+1. Clone the repository: ```git clone https://github.com/onathjan/plantsort.git cd plantsort```
 
-```git clone https://github.com/your-username/plantsort.git cd plantsort```
+2. Install dependencies: Make sure you have Bundler installed, then run: ```bundle install```
 
-2. Install dependencies: Make sure you have Bundler installed, then run:
+3. Set up the database: ```rails db:create db:migrate db:seed```
 
-```bundle install```
-
-3. Set up the database:
-
-```rails db:create db:migrate db:seed```
-
-4. Run the server:
-
-```rails server```
+4. Run the server: ```rails server```
 
 5. Open the app in your browser: Go to http://localhost:3000
 
