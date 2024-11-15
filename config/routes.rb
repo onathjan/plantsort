@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   post "signup",  to: "registrations#create"
   get "login",    to: "sessions#new"
   get "settings", to: "registrations#edit"
-  resource :registrations, except: [ :index, :show ]
+  resource :registrations, except: [ :show ]
   resources :plants, except: [ :index, :show ]
 end
