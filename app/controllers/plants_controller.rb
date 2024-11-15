@@ -1,9 +1,13 @@
 class PlantsController < ApplicationController
+  before_action :set_plant, only: [ :edit, :update, :destroy ]
   def new
     @plant = Plant.new
   end
 
   def create
+    # Ensure category_ids is an array (in case of unselected checkboxes)
+    params[:plant][:category_ids] ||= []
+
     @plant = Current.user.plants.new(plant_params)
     @plant.categories = Category.find(params[:plant][:category_ids])
 
@@ -15,11 +19,12 @@ class PlantsController < ApplicationController
   end
 
   def edit
-    @plant = Current.user.plants.find(params[:id])
   end
 
   def update
-    @plant = Current.user.plants.find(params[:id])
+    # Ensure category_ids is an array (in case of unselected checkboxes)
+    params[:plant][:category_ids] ||= []
+
     @plant.categories = Category.find(params[:plant][:category_ids])
 
     if @plant.update(plant_params)
@@ -30,8 +35,12 @@ class PlantsController < ApplicationController
   end
 
   def destroy
-    Current.user.plants.find(params[:id]).destroy
+    @plant.destroy
     redirect_to root_path
+  end
+
+  def set_plant
+    @plant = Current.user.plants.find(params[:id])
   end
 
   private

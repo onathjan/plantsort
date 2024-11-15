@@ -10,7 +10,7 @@ class Plant < ApplicationRecord
 
   def must_have_at_least_one_category
     if category_ids.empty?
-      errors.add(:categories, "must have at least one selected")
+      errors.add(:base, "Each plant must belong to at least one category")
     end
   end
 end
