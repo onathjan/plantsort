@@ -1,9 +1,9 @@
 <section class="section">
-  <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-2">
+  <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-1">
     <% @categories.each do |category| %>
       <div class="card p-3 m-2 is-green has-text-white has-text-centered">
         <p class="is-size-6 has-text-weight-bold">
-          <%= category.name.capitalize %>
+          <%= category.name %>
         </p>
       </div>
     <% end %>
@@ -29,7 +29,7 @@
               <p class="has-text-weight-semibold is-size-4"><%= "#{plant.name}" %></p>
               <div class="is-flex is-flex-wrap-wrap is-2">
                 <% plant.categories.each do |category| %>
-                  <span class="is-size-7 m-1">#<%= category.name.capitalize %></span>
+                  <span class="is-size-7 m-1">#<%= category.name.gsub(" ", "") %></span>
                 <% end %>
               </div>
               <div class="actions mt-auto">
