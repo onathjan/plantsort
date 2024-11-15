@@ -2,7 +2,7 @@ require "test_helper"
 
 class SessionsTest < ActionDispatch::IntegrationTest
   def setup
-    @user = users(:jonathan)
+    @user = users(:john)
   end
 
   test "should get login path" do

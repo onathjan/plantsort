@@ -1,4 +1,9 @@
-jonathan:
+john:
   id: 1
-  email_address: jonathan@example.com
+  email_address: johndoe@example.com
+  password_digest: <%= BCrypt::Password.create("foobar") %>
+
+jane:
+  id: 2
+  email_address: janedoe@example.com
   password_digest: <%= BCrypt::Password.create("foobar") %>
