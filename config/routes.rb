@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get "static_pages/home"
-  resource :session
+  resource :session, except: [ :new ]
 
   # keep commented out unless password mailers are needed
   # resources :passwords, param: :token
@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   post "signup",  to: "registrations#create"
   get "login",    to: "sessions#new"
   get "settings", to: "registrations#edit"
-  resource :registrations
+  resource :registrations, except: [ :index, :show ]
   resources :plants, except: [ :index, :show ]
 end
