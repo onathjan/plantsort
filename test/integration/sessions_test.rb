@@ -19,7 +19,7 @@ class InvalidCredentialsTest < SessionsTest
 
     assert_nil Current.user
     assert_response :redirect
-    assert_redirected_to new_session_path
+    assert_redirected_to login_path
     follow_redirect!
     assert_select "title", "Log In | PlantSort"
     assert_select "h1", "Log In"
@@ -29,7 +29,7 @@ class InvalidCredentialsTest < SessionsTest
     post session_path, params: { email_address: "invalid@example.com", password: @user.password_digest }
 
     assert_response :redirect
-    assert_redirected_to new_session_path
+    assert_redirected_to login_path
     follow_redirect!
     assert_select "title", "Log In | PlantSort"
     assert_select "h1", "Log In"
@@ -61,7 +61,7 @@ class LogoutTest < SessionsTest
 
     delete session_path
     assert_response :redirect
-    assert_redirected_to new_session_path
+    assert_redirected_to login_path
     follow_redirect!
     assert_select "title", "Log In | PlantSort"
     assert_select "p", "Logged out successfully."

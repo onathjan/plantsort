@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
       start_new_session_for user
       redirect_to after_authentication_url, notice: "Logged in successfully."
     else
-      redirect_to new_session_path, alert: "Login information is incorrect. Please try again."
+      redirect_to login_path, alert: "Login information is incorrect. Please try again."
     end
   end
 
   def destroy
     terminate_session
-    redirect_to new_session_path, notice: "Logged out successfully."
+    redirect_to login_path, notice: "Logged out successfully."
   end
 end
