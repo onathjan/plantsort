@@ -24,7 +24,7 @@
                   <div class="checkbox">
                     <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
                     <label for="category_ids_<%= category.id %>" class="checkbox">
-                      <%= category.name.capitalize %>
+                      <%= category.name %>
                     </label>
                   </div>
                 <% end %>
