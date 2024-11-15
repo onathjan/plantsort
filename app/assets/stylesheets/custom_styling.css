@@ -35,6 +35,10 @@
   max-width: 300px;
 }
 
+.footer-link:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
   div.navbar-menu.is-active {
     border-radius: 15px !important;
