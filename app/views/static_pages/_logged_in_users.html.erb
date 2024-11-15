@@ -10,12 +10,14 @@
   </div>
   <div class="my-5">
     <% if @plants.count.zero? %>
-      <div class="container columns is-centered my-6 has-text-centered">
-        <div class="column is-half">
-          <div class="card is-green">
-            <div class="card-content">
-              <p class="is-size-4 has-text-white block">You haven't added any plants yet, but when you do they will appear here. Click the button below to add your first plant.</p>
-              <%= link_to "New Plant", new_plant_path, class: "button is-white has-text-green has-text-weight-semibold is-medium" %>
+      <div class="container my-6 has-text-centered">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="card is-green">
+              <div class="card-content">
+                <p class="is-size-4 has-text-white block">You haven't added any plants yet, but when you do they will appear here. Click the button below to add your first plant.</p>
+                <%= link_to "New Plant", new_plant_path, class: "button is-white has-text-green has-text-weight-semibold is-medium" %>
+              </div>
             </div>
           </div>
         </div>
@@ -29,7 +31,7 @@
               <p class="has-text-weight-semibold is-size-4"><%= "#{plant.name}" %></p>
               <div class="is-flex is-flex-wrap-wrap is-2">
                 <% plant.categories.each do |category| %>
-                  <span class="is-size-7 m-1">#<%= category.name..delete(" ") %></span>
+                  <span class="is-size-7 m-1">#<%= category.name.delete(" ") %></span>
                 <% end %>
               </div>
               <div class="actions mt-auto">
