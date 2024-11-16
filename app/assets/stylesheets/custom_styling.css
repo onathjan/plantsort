@@ -14,8 +14,12 @@
   background-color: #51A400;
 }
 
-.notice-message, .is-green {
-  background-color: #3E7E00;
+.notice-message {
+  background-color: #3E7E00 !important;
+}
+
+.is-green {
+  background-color: #3E7E00 !important;
 }
 
 .button.is-red {
@@ -27,7 +31,7 @@
 }
 
 .alert-message {
-  background-color: #FF1F41;
+  background-color: #FF1F41 !important;
 }
 
 #plant-card {
