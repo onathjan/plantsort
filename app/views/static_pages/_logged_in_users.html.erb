@@ -2,7 +2,7 @@
   <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-1">
     <% @categories.each do |category| %>
       <div class="card p-3 m-2 is-green has-text-white has-text-centered">
-        <p class="is-size-6 has-text-weight-bold">
+        <p class="is-size-6 is-size-7-mobile has-text-weight-bold">
           <%= category.name %>
         </p>
       </div>
@@ -24,7 +24,7 @@
       </div>
     <% else %>
       <div class="is-flex is-align-items-center block">
-        <h1 class="is-size-2 has-text-weight-semibold m-0 p-0">All Plants (<%= @plants.count %>)</h1>  
+        <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold m-0 p-0">All Plants (<%= @plants.count %>)</h1>  
         <div>
           <%= link_to "New Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3" %>
         </div>
