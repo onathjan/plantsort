@@ -18,7 +18,7 @@
               <div class="card">
                 <div class="card-content">
                   <p class="is-size-4 has-text-black block">No plants found. Click the button below to add one.</p>
-                  <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium" %>
+                  <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium", data: { turbo_frame: "_top" } %>
                 </div>
               </div>
             </div>
