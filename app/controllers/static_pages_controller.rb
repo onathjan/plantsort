@@ -5,9 +5,11 @@ class StaticPagesController < ApplicationController
     if authenticated?
       @categories = Category.all
       @plants = filter_plants
+      params[:category].nil? ? @selected_category = "All Plants" : @selected_category = params[:category]
 
       if request.headers["Turbo-Frame"]
         @plants
+        @selected_category
       end
     end
   end
