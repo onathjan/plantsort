@@ -1,40 +1,42 @@
 <section class="section">
   <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-1">
-  <% @categories.each do |category| %>
-    <%= link_to root_path(category: category.name), data: { turbo_frame: "plant-index" }, class: "card p-3 m-2 is-green has-text-white has-text-centered" do %>
-      <p class="is-size-6 is-size-7-mobile has-text-weight-bold">
-        <%= category.name %>
-      </p>
+    <% @categories.each do |category| %>
+      <%= link_to root_path(category: category.name), data: { turbo_frame: "plant-index" }, class: "card p-3 m-2 is-green has-text-white has-text-centered" do %>
+        <p class="is-size-6 is-size-7-mobile has-text-weight-bold">
+          <%= category.name %>
+        </p>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
+
   <div class="my-5">
-    <% if @plants.count.zero? %>
-      <div class="container my-6 has-text-centered">
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="card">
-              <div class="card-content">
-                <p class="is-size-4 has-text-black block">You haven't added any plants yet, but when you do they will appear here. Click the button below to add your first plant.</p>
-                <%= link_to "New Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium" %>
+    <turbo-frame id="plant-index">
+      <% if @plants.count.zero? %>
+        <div class="container my-6 has-text-centered">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="card">
+                <div class="card-content">
+                  <p class="is-size-4 has-text-black block">No plants found. Click the button below to add one.</p>
+                  <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium" %>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    <% else %>
-      <turbo-frame id="plant-index">
+      <% else %>
         <div class="is-flex is-align-items-center block">
           <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold m-0 p-0"><%= @selected_category %> (<%= @plants.count %>)</h1>  
           <div>
-            <%= link_to "New Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
+            <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
           </div>
-         <% if @selected_category != "All Plants" %>
+          <% if @selected_category != "All Plants" %>
             <div>
               <%= link_to "Reset", root_path, class: "button is-red has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
             </div>
           <% end %>
         </div>
+
         <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
           <div class="grid">
             <% @plants.each do |plant| %>
@@ -53,7 +55,7 @@
             <% end %>
           </div>
         </div>
-      </turbo-frame>
-    <% end %>
+      <% end %>
+    </turbo-frame>
   </div>
 </section>
