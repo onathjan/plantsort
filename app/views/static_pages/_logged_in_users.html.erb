@@ -29,6 +29,11 @@
           <div>
             <%= link_to "New Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
           </div>
+         <% if @selected_category != "All Plants" %>
+            <div>
+              <%= link_to "Reset", root_path, class: "button is-red has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
+            </div>
+          <% end %>
         </div>
         <% if @plants.any? %>
           <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
