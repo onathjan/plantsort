@@ -25,7 +25,7 @@
           </div>
         </div>
       <% else %>
-        <div class="is-flex is-align-items-center block">
+        <div class="is-flex is-align-items-center is-flex-wrap-wrap block">
           <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold m-0 p-0"><%= @selected_category %> (<%= @plants.count %>)</h1>  
           <div>
             <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mr-0 ml-3", data: { turbo: false } %>
