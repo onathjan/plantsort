@@ -34,6 +34,13 @@
   background-color: #FF1F41 !important;
 }
 
+.dashboard-screenshot {
+  background-image: url(dashboard-screenshot.webp);
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #plant-card {
   height: 200px;
   max-width: 300px;
