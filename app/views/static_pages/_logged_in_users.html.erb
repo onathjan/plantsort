@@ -1,7 +1,7 @@
 <section class="section">
   <div class="is-flex is-justify-content-center is-flex-wrap-wrap is-1">
     <% @categories.each do |category| %>
-      <%= link_to root_path(category: category.name), data: { turbo_frame: "plant-index" }, class: "card p-3 m-2 is-green has-text-white has-text-centered" do %>
+      <%= link_to root_path(category: category.name), data: { turbo_frame: "plant-index" }, class: "card p-2 m-1 is-green has-text-white has-text-centered" do %>
         <p class="is-size-6 is-size-7-mobile has-text-weight-bold">
           <%= category.name %>
         </p>
