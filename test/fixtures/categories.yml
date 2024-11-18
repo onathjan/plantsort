@@ -1,5 +1,111 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   id: 1
-  name: Root
+  name: Annual
+
+two:
+  id: 2
+  name: Biennial
+
+three:
+  id: 3
+  name: Perennial
+
+four:
+  id: 4
+  name: Cultivated
+
+five: 
+  id: 5
+  name: Wild
+
+six: 
+  id: 6
+  name: Fruit
+
+seven:
+  id: 7
+  name: Vegetable
+
+eight: 
+  id: 8
+  name: Grain
+
+nine:
+  id: 9
+  name: Legume
+
+ten: 
+  id: 10
+  name: Oilseed
+
+eleven:
+  id: 11
+  name: Herb
+
+twelve:
+  id: 12
+  name: Spice
+
+thirteen:
+  id: 13
+  name: Tea
+
+fourteen:
+  id: 14
+  name: Fungi
+
+fifteen:
+  id: 15
+  name: Calorie Crop
+
+sixteen:
+  id: 16
+  name: Seed
+
+seventeen:
+  id: 17
+  name: Nut
+
+eighteen:
+  id: 18
+  name: Root/Tuber
+
+nineteen:
+  id: 19
+  name: Shoot
+
+twenty:
+  id: 20
+  name: Greens
+
+twenty-one:
+  id: 21
+  name: Flower
+
+twenty-two:
+  id: 22
+  name: Medicinal
+
+twenty-three:
+  id: 23
+  name: Pollinator Plant
+
+twenty-four:
+  id: 24
+  name: Nitrogen Fixer
+
+twenty-five:
+  id: 25
+  name: Dynamic Accumulator
+
+twenty-six:
+  id: 26
+  name: Cover Crop
+
+twenty-seven:
+  id: 27
+  name: Green Manure
+
+twenty-eight:
+  id: 28
+  name: Utility Crop
