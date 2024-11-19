@@ -28,9 +28,9 @@
         <div class="is-flex is-flex-direction-column mb-6">
           <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold mb-2"><%= @selected_category %> (<%= @plants.count %>)</h1>  
           <div class="buttons">
-            <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium is-responsive my-0 mx-0", data: { turbo: false } %>
+            <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mx-0", data: { turbo: false } %>
             <% if @selected_category != "All Plants" %>
-              <%= link_to "Reset", root_path(category: "All Plants"), class: "button is-red has-text-white has-text-weight-semibold is-medium is-responsive my-0 mr-0" %>
+              <%= link_to "Reset", root_path(category: "All Plants"), class: "button is-red has-text-white has-text-weight-semibold is-medium my-0 mr-0" %>
             <% end %>
           </div>
         </div>
