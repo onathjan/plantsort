@@ -46,15 +46,22 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "no plants message should display when a user doesn't have any plants" do
-    assert_select "p", "No plants found. Click the button below to add one." do
-      @plants.destroy_all
-      get root_path
-    end
+    @plants.destroy_all
+    get root_path
+    assert_select "p", "No plants found. Click the button below to add one."
   end
 
   test "no plants message should display when an empty category is selected" do
+    get root_path, params: { category: "Dynamic Accumulator" }
+    assert_select "p", "No plants found. Click the button below to add one."
   end
 
   test "plant cards should render properly" do
+    get root_path
+    assert_select "div#plant-card"
+    assert_select "p", "Tomato"
+    assert_select "span", "#Annual"
+    assert_select "a", "Edit"
+    assert_select "a", "Delete"
   end
 end
