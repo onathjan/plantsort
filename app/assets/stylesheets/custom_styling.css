@@ -34,6 +34,19 @@
   background-color: #FF1F41 !important;
 }
 
+.hero {
+  background-image: url(hero-bg-2.jpg);
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-container {
+  background-color: rgb(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 30px;
+}
+
 .dashboard-screenshot {
   background-image: url(dashboard-screenshot.webp);
   background-size: cover; 
