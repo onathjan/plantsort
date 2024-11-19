@@ -25,18 +25,15 @@
           </div>
         </div>
       <% else %>
-        <div class="is-flex is-align-items-center is-flex-wrap-wrap block">
-          <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold m-0 p-0"><%= @selected_category %> (<%= @plants.count %>)</h1>  
-          <div>
-            <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium is-responsive my-0 mr-0 ml-3", data: { turbo: false } %>
+        <div class="is-flex is-flex-direction-column mb-6">
+          <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold mb-2"><%= @selected_category %> (<%= @plants.count %>)</h1>  
+          <div class="buttons">
+            <%= link_to "Add Plant", new_plant_path, class: "button is-green has-text-white has-text-weight-semibold is-medium is-responsive my-0 mx-0", data: { turbo: false } %>
+            <% if @selected_category != "All Plants" %>
+              <%= link_to "Reset", root_path(category: "All Plants"), class: "button is-red has-text-white has-text-weight-semibold is-medium is-responsive my-0 mr-0" %>
+            <% end %>
           </div>
-          <% if @selected_category != "All Plants" %>
-            <div>
-              <%= link_to "Reset", root_path(category: "All Plants"), class: "button is-red has-text-white has-text-weight-semibold is-medium is-responsive my-0 mr-0 ml-3" %>
-            </div>
-          <% end %>
         </div>
-
         <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
           <div class="grid">
             <% @plants.each do |plant| %>
