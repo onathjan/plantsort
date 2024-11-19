@@ -44,4 +44,17 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
     get root_path(category: "All Plants")
     assert_select "h1", "All Plants (#{@plants.count})"
   end
+
+  test "no plants message should display when a user doesn't have any plants" do
+    assert_select "p", "No plants found. Click the button below to add one." do
+      @plants.destroy_all
+      get root_path
+    end
+  end
+
+  test "no plants message should display when an empty category is selected" do
+  end
+
+  test "plant cards should render properly" do
+  end
 end
