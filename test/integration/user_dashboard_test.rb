@@ -58,6 +58,7 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
 
   test "plant cards should render properly" do
     get root_path
+    assert_select "div.grid"
     assert_select "div#plant-card"
     assert_select "p", "Tomato"
     assert_select "span", "#Annual"
