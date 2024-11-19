@@ -31,4 +31,17 @@ class UserDashboardTest < ActionDispatch::IntegrationTest
     get root_path, params: { category: "Annual" }
     assert_select "a", text: "Reset"
   end
+
+  test "dashboard <h1> changes dynamically when a category is selected" do
+    assert_select "h1", "All Plants (#{@plants.count})"
+    get root_path, params: { category: "Annual" }
+    assert_select "h1", "Annual (#{@user.plants.joins(:categories).where(categories: { name: "Annual" }).count})"
+  end
+
+  test "reset button should clear category filter" do
+    get root_path, params: { category: "Annual" }
+    assert_select "h1", "Annual (#{@user.plants.joins(:categories).where(categories: { name: "Annual" }).count})"
+    get root_path(category: "All Plants")
+    assert_select "h1", "All Plants (#{@plants.count})"
+  end
 end
