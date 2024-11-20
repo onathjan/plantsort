@@ -39,11 +39,11 @@ class PlantsController < ApplicationController
     redirect_to root_path
   end
 
-  def set_plant
-    @plant = Current.user.plants.find(params[:id])
-  end
-
   private
+    def set_plant
+      @plant = Current.user.plants.find(params[:id])
+    end
+
     def plant_params
       params.expect(plant: [ :name, :taxonomic_name, category_ids: [] ])
     end
