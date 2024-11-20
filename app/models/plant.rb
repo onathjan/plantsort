@@ -3,6 +3,7 @@ class Plant < ApplicationRecord
   has_and_belongs_to_many :categories
 
   validates :name, presence: true, length: { maximum: 25 }
+  validates :taxonomic_name, length: { maximum: 40 }
 
   validate :must_have_at_least_one_category
 
