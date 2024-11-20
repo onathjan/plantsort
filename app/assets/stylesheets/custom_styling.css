@@ -56,8 +56,7 @@ hr.divider {
 }
 
 #plant-card {
-  height: 200px;
-  max-width: 300px;
+  margin-bottom: 24px;
 }
 
 .footer-link:hover {
