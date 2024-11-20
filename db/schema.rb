@@ -28,7 +28,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_20_230239) do
   end
 
   create_table "plants", force: :cascade do |t|
-    t.string "common_name", null: false
+    t.string "common_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false

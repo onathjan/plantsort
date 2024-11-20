@@ -1,9 +1,9 @@
 one:
   id: 1
-  name: Tomato
+  common_name: Tomato
   user_id: 1
 
 two: 
   id: 2
-  name: Stinging Nettle
+  common_name: Stinging Nettle
   user_id: 2

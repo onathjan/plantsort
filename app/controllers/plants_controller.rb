@@ -45,6 +45,6 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.expect(plant: [ :name, :taxonomic_name, category_ids: [] ])
+      params.expect(plant: [ :common_name, :taxonomic_name, category_ids: [] ])
     end
 end

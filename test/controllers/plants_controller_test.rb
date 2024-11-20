@@ -12,7 +12,7 @@ class PlantsControllerTest < ActionDispatch::IntegrationTest
     assert_difference "Plant.count", 1 do
       get new_plant_path
       assert_response :success
-      post plants_path(@plant.id), params: { plant: { name: "Green Bean", user_id: @user.id, category_ids: [ @category.id ] } }
+      post plants_path(@plant.id), params: { plant: { common_name: "Green Bean", user_id: @user.id, category_ids: [ @category.id ] } }
       assert_redirected_to root_url
     end
   end
@@ -20,12 +20,12 @@ class PlantsControllerTest < ActionDispatch::IntegrationTest
   test "user should be able to edit a plant" do
     get edit_plant_path(@plant.id)
     assert_response :success
-    patch plant_path(@plant.id), params: { plant: { name: "Something different", category_ids: [ @category.id ] } }
+    patch plant_path(@plant.id), params: { plant: { common_name: "Something different", category_ids: [ @category.id ] } }
     assert_redirected_to root_path
     follow_redirect!
     assert_select "title", "PlantSort"
     @plant.reload
-    assert_equal "Something different", @plant.name
+    assert_equal "Something different", @plant.common_name
   end
 
   test "user should be able to delete a plant" do
