@@ -35,23 +35,24 @@
 }
 
 .hero {
-  background-image: url(hero-bg-2.jpg);
+  background-image: url(hero-bg.webp);
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .hero-container {
-  background-color: rgb(255, 255, 255, 0.95);
+  background-color: rgb(255, 255, 255, 0.85);
   border-radius: 10px;
   padding: 30px;
 }
 
-.dashboard-screenshot {
-  background-image: url(dashboard-screenshot.webp);
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
+hr.divider {
+  background-color: #3E7E00;
+  border: none;
+  height: 1px;
+  margin: 50px auto;
+  width: 90%;
 }
 
 #plant-card {
