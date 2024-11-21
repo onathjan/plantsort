@@ -27,7 +27,7 @@
            <div class="field">
               <%= form.label :categories, class: "label" %>
               <div class="checkboxes">
-                <% Category.all.each do |category| %>
+                <% @categories.each do |category| %>
                   <div class="checkbox">
                     <%= form.check_box :category_ids, { multiple: true }, category.id, nil %>
                     <label for="category_ids_<%= category.id %>" class="checkbox">
