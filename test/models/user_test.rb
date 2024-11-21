@@ -73,3 +73,11 @@ class PasswordTests < UserTest
     assert_not @user.valid?
   end
 end
+
+class AddDefaultCategoriesTest < ActiveSupport::TestCase
+  test "user should have default categories after creation" do
+    default_categories = Category.where(user_id: nil)
+    user = User.create!(email_address: "user@example.com", password: "foobar")
+    assert_equal default_categories.count, user.categories.count
+  end
+end

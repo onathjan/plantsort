@@ -137,3 +137,7 @@ twenty-eight:
   id: 28
   name: Utility Crop
   user_id: 1
+
+twenty-nine:
+  id: 29
+  name: Default Universal Test Category
