@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Current.user.categories
+    @categories = Current.user.categories.order(created_at: :desc)
   end
 
   def new
