@@ -32,8 +32,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.destroy
-    redirect_to root_path
+    Current.user.categories.find(params[:id]).destroy
+    redirect_to root_path, notice: "Category successfully destroyed."
   end
 
   private
