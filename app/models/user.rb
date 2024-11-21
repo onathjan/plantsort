@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   after_create :add_default_categories
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
 
   validates :email_address, presence: true, length: { minimum: 8, maximum: 50 },
                     format: { with: VALID_EMAIL_REGEX },
