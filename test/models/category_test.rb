@@ -6,6 +6,11 @@ class CategoryTest < ActiveSupport::TestCase
     @category = Category.new(name: "test", user_id: @user.id)
     assert @category.valid?
   end
+
+  test "category must belong to user" do
+    @category.user = nil
+    assert_not @category.valid?
+  end
   test "name must be present" do
     @category.name = nil
     assert_not @category.valid?
