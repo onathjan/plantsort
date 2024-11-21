@@ -1,0 +1,28 @@
+<% provide(:title, "Edit Category") %>
+
+<section class="is-fullscreen mb-6">
+  <div class="container is-vcentered">
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <%= form_with(model: @category, url: category_path) do |form| %>
+          <div class="box m-3 p-5">
+            <p class="is-size-2 has-text-weight-medium block">Edit Category</p>
+
+            <%= render 'shared/error_messages', object: form.object %>
+
+            <div class="field">
+              <%= form.label :name, class: "label" %>
+              <div class="control">
+                <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+              </div>
+            </div>
+            <br>
+            <div class="actions">
+              <%= form.submit "Update", class: "button is-green has-text-white has-text-weight-semibold" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
