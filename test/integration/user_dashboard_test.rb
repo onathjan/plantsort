@@ -3,7 +3,7 @@ require "test_helper"
 class UserDashboardTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:john)
-    @categories = Category.all
+    @categories = @user.categories
     @plants = Plant.where(user_id: @user.id)
     post session_path, params: { email_address: @user.email_address, password: "foobar" }
     follow_redirect!
