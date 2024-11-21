@@ -38,12 +38,14 @@
           <div class="grid">
             <% @plants.each do |plant| %>
               <div class="card p-4 is-flex is-flex-direction-column is-justify-content-space-between" id="plant-card">
-                <p class="has-text-weight-semibold is-size-4"><%= "#{plant.common_name}" %></p>
-                <p class="is-size-6 is-italic"><%= "#{plant.taxonomic_name}" %></p>
-                <div class="is-flex is-flex-wrap-wrap my-2 py-1">
-                  <% plant.categories.each do |category| %>
-                    <span class="is-size-7 m-1">#<%= category.name.delete(" ") %></span>
-                  <% end %>
+                <div class="is-flex is-flex-direction-column is-justify-content-start mb-4">
+                  <p class="has-text-weight-semibold is-size-4"><%= "#{plant.common_name}" %></p>
+                  <p class="is-size-6 is-italic"><%= "#{plant.taxonomic_name}" %></p>
+                  <div class="is-flex is-flex-wrap-wrap my-1">
+                    <% plant.categories.each do |category| %>
+                      <span class="is-size-7 m-1">#<%= category.name.delete(" ") %></span>
+                    <% end %>
+                  </div>
                 </div>
                 <div class="actions">
                   <%= link_to "Edit", edit_plant_path(plant), class: "button is-green has-text-white has-text-weight-semibold", data: { turbo: "false" } %>
