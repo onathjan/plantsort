@@ -1,8 +1,10 @@
 <% provide(:title, "All Categories") %>
 
 <div class="section">
-  <p class="is-size-1 block">All Categories (<%= @categories.count %>)</p>
-  <ul>
-    <%= render @categories %>
-  </ul>
+  <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold mb-4">All Categories (<%= @categories.count %>)</h1>
+   <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
+    <div class="grid">
+      <%= render @categories %>
+    </div>
+  </div>
 </div>
