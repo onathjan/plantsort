@@ -14,9 +14,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    @category = Current.user.categories.find(params[:id])
   end
 
   def update
+    @category = Current.user.categories.find(params[:id])
+
     if @category.update(category_params)
       redirect_to root_path
     else
