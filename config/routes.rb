@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get "settings", to: "registrations#edit"
   resource :registrations, except: [ :show ]
   resources :plants, except: [ :index, :show ]
+  resources :categories, except: [ :show ]
 end

@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     if authenticated?
-      @categories = Category.all
+      @categories = Current.user.categories
       @plants = filter_plants
       params[:category].nil? ? @selected_category = "All Plants" : @selected_category = params[:category]
     end

@@ -14,13 +14,16 @@
     <div class="navbar-end">
       <% if authenticated? %>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Settings", settings_path, class: "button is-white has-text-green has-text-weight-semibold mx-0" %>
+          <%= link_to "All Categories", categories_path, class: "button is-white has-text-green has-text-weight-semibold mx-0 p-2" %>
+        </div>
+        <div class="navbar-item has-text-centered">
+          <%= link_to "Settings", settings_path, class: "button is-white has-text-green has-text-weight-semibold mx-0 p-2" %>
         </div>
         <div class="navbar-item has-text-centered">
           <%= link_to "Log Out", session_path, data: { "turbo-method": :delete }, class: "button is-green has-text-white has-text-weight-semibold mx-0" %>
       <% else %>
         <div class="navbar-item has-text-centered">
-          <%= link_to "Log In", login_path, class: "button is-white has-text-green has-text-weight-semibold mx-0" %>
+          <%= link_to "Log In", login_path, class: "button is-white has-text-green has-text-weight-semibold mx-0 p-2" %>
         </div>
 
         <div class="navbar-item has-text-centered">
