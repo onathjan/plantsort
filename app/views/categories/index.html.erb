@@ -1,7 +1,12 @@
 <% provide(:title, "All Categories") %>
 
 <div class="section">
-  <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold mb-4">All Categories (<%= @categories.count %>)</h1>
+  <div class="is-flex is-flex-direction-column mb-6">
+    <h1 class="is-size-2 is-size-3-mobile has-text-weight-semibold mb-2">All Categories (<%= @categories.count %>)</h1>  
+    <div class="buttons">
+      <%= link_to "Add Category", new_category_path, class: "button is-green has-text-white has-text-weight-semibold is-medium my-0 mx-0", data: { turbo: false } %>
+    </div>
+  </div>
    <div class="fixed-grid has-5-cols-desktop has-3-cols-tablet has-1-cols-mobile">
     <div class="grid">
       <%= render @categories %>
